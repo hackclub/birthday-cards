@@ -1,32 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="style.css">
-</head>
-<title>birthday </title>
-    <link rel="icon" type="image/x-icon" href="birthday_cards.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday!</title>
+  <link rel="icon" href="image.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a1c4fd);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+
+
+.top-left-img {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  max-width: 160px;
+  height: auto;
+  cursor: pointer;
+  z-index: 10; 
+}
+
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  15% { transform: rotate(8deg); }
+  30% { transform: rotate(-8deg); }
+  45% { transform: rotate(6deg); }
+  60% { transform: rotate(-6deg); }
+  75% { transform: rotate(4deg); }
+  90% { transform: rotate(-4deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+.top-left-img:hover {
+  animation: wiggle 1s ease-in-out 1;
+}
+
+
+
+ 
+    .top-text {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #fff;
+      text-shadow: 0 0 5px #000;
+      pointer-events: none;
+    }
+
+    .container {
+      background: rgba(0,0,0,0.6);
+      padding: 50px 70px;
+      border-radius: 25px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+      animation: popIn 1s ease-out;
+      z-index: 1;
+    }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    h1 {
+      font-family: 'Fredoka One', cursive;
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #fff, 0 0 10px #ff7e5f, 0 0 15px #feb47b;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { text-shadow: 0 0 3px #fff, 0 0 7px #ff7e5f, 0 0 10px #feb47b; }
+      100% { text-shadow: 0 0 5px #fff, 0 0 10px #ff7e5f, 0 0 15px #feb47b; }
+    }
+
+    p {
+      font-size: 1.3em;
+      margin: 12px 0;
+      animation: fadeInUp 1s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 18px 35px;
+      font-size: 1.3em;
+      font-weight: bold;
+      border: none;
+      border-radius: 15px;
+      background: linear-gradient(45deg, #ff7e5f, #feb47b);
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+    }
+
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  opacity: 0.7;
+  top: -10px;
+  animation: fall 5s linear infinite;
+  z-index: -1;
+}
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
+
+
+    .center-img {
+      display: block;
+      max-width: 200px;   
+      width: 100%;
+      height: auto;       
+      margin: 0 auto 20px auto;
+      border: 5px solid #fff; 
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+  </style>
 </head>
 <body>
-<a href="https://hackclub.com" class="site-logo" aria-label="Hack Club">
-  <img src="https://assets.hackclub.com/flag-orpheus-top.svg" alt="Hack Club logo">
-</a>
 
-<h1>happy birthday!</h1>
+  
+  <img src="ee.png" class="top-left-img" onclick="window.open('https://hackclub.com', '_blank')" alt="Hack Club">
 
-<p>want a card from hq on your birthday?</p>
+  <div class="container">
+    <img src="image.png" class="center-img" alt="Birthday Image">
+    <h1> Happy Birthday! </h1>
+    <p>Work on a project for <strong>1 hour</strong> to get a card from HQ</p>
+    <p>Work for <strong>3 hours</strong> for a *secret* prize :D</p>
+    <button onclick="window.open('https://submit.hackclub.com/birthday', '_blank')">Submit</button>
+  </div>
 
-<p>you ship birthday related project</p>
-
-<p>we ship a birthday card on your birthday</p>
-
-<p>if you use hackatime and log at least 3 hrs you also get a free gift from hq</p>
-
-
-    <button class="button" onclick="window.location.href='https://submit.hackclub.com/birthday';">
-      submit
-    </button>
+  
+  <script>
+    for(let i=0; i<100; i++){
+      let confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      confetti.style.width = confetti.style.height = Math.random()*8 + 5 + 'px';
+      confetti.style.animationDuration = Math.random()*3 + 3 + 's';
+      confetti.style.opacity = Math.random();
+      document.body.appendChild(confetti);
+    }
+  </script>
 
 </body>
 </html>
-<html>
-
